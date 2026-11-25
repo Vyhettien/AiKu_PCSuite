@@ -1,0 +1,87 @@
+{
+  "name": "Tiếng Việt",
+  "locale": "vi_VN",
+  "about": "Vietnamese. PC Suite already ships an official vi_VN locale; this adds everything the Chinese-ROM build hard-codes and the keys the vi_VN locale is missing.",
+  "codes": {
+    "en_US": "vi_VN",
+    "en_US_in": "vi_VN",
+    "en-US": "vi-VN",
+    "vus": "vvi"
+  },
+  "keepCodesAfter": ["fallbackLocale:"],
+  "exclude": [],
+  "configIni": { "LanguageID": "1066", "LanguageTag": "vi_VN" },
+  "vivoScreen": "vi-VN",
+  "asars": {
+    "app.asar": {
+      "locales": [
+        { "type": "webpack", "from": "dist/electron/locales-en_US.js", "to": "dist/electron/locales-vi_VN.js" },
+        { "type": "json", "from": "dist/electron/locales/en_US/framework.json", "to": "dist/electron/locales/vi_VN/framework.json" },
+        { "type": "tinymce", "from": "dist/electron/static/tinymce/*/langs/en_US_in.js", "base": "dist/electron/static/tinymce/*/langs/vi_VN.js", "to": "dist/electron/static/tinymce/*/langs/vi_VN_in.js", "code": "vi_VN_in" }
+      ],
+      "sourceReplace": [
+        { "file": "dist/electron/171.js", "find": "[\"S\",\"M\",\"T\",\"W\",\"T\",\"F\",\"S\"]", "replace": "[\"CN\",\"T2\",\"T3\",\"T4\",\"T5\",\"T6\",\"T7\"]" },
+        { "file": "dist/electron/renderer.js", "find": "h=[\"S\",\"M\",\"T\",\"W\",\"T\",\"F\",\"S\"]", "replace": "h=[\"CN\",\"T2\",\"T3\",\"T4\",\"T5\",\"T6\",\"T7\"]" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "labelText:\"S\",value:0", "replace": "labelText:\"CN\",value:0" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "labelText:\"M\",value:1", "replace": "labelText:\"T2\",value:1" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "labelText:\"T\",value:2", "replace": "labelText:\"T3\",value:2" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "labelText:\"W\",value:3", "replace": "labelText:\"T4\",value:3" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "labelText:\"T\",value:4", "replace": "labelText:\"T5\",value:4" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "labelText:\"F\",value:5", "replace": "labelText:\"T6\",value:5" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "labelText:\"S\",value:6", "replace": "labelText:\"T7\",value:6" },
+        { "file": "dist/electron/app-components.js", "find": "la-input__inner\",attrs:{placeholder:\"Select date\"", "replace": "la-input__inner\",attrs:{placeholder:\"Chọn ngày\"" },
+        { "file": "dist/electron/app-components.js", "find": "la-input__inner\",attrs:{placeholder:\"Select time\"", "replace": "la-input__inner\",attrs:{placeholder:\"Chọn giờ\"" },
+        { "file": "dist/electron/8.js", "find": "this.freqName=\"day\"", "replace": "this.freqName=\"ngày\"" },
+        { "file": "dist/electron/8.js", "find": "this.freqName=\"week\"", "replace": "this.freqName=\"tuần\"" },
+        { "file": "dist/electron/8.js", "find": "this.freqName=\"month\"", "replace": "this.freqName=\"tháng\"" },
+        { "file": "dist/electron/8.js", "find": "this.freqName=\"year\"", "replace": "this.freqName=\"năm\"" },
+        { "file": "dist/electron/8.js", "find": "e.format(\"MMM D\")", "replace": "e.format(\"D/M\")" },
+        { "file": "dist/electron/8.js", "find": "label:`Hằng tháng (${[\"\",\"thứ nhất\",\"thứ hai\",\"thứ ba\",\"thứ tư\",\"thứ năm\"][i]} ${[\"CN\",\"T2\",\"T3\",\"T4\",\"T5\",\"T6\",\"T7\"][e.day()]})`", "replace": "label:`Hằng tháng (${[\"CN\",\"T2\",\"T3\",\"T4\",\"T5\",\"T6\",\"T7\"][e.day()]} tuần ${[\"\",\"thứ nhất\",\"thứ hai\",\"thứ ba\",\"thứ tư\",\"thứ năm\"][i]})`" },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "\"./vi.js\":1787,", "replace": "\"./vi_VN.js\":1787," },
+        { "files": ["dist/electron/renderer.js", "dist/electron/child-window.js", "dist/electron/module-share-preview.js"], "find": "`Các mục đã chọn ${this.name} sẽ", "replace": "`Các ${this.name} đã chọn sẽ" },
+        { "file": "dist/electron/components-connection.js", "find": "`${this.wifiName} cài đặt bảo mật ngăn việc tìm ${this.deviceDesc} ở gần.", "replace": "`Cài đặt bảo mật của ${this.wifiName} ngăn việc tìm ${this.deviceDesc} ở gần." },
+        { "file": "dist/electron/147.js", "find": "nowIndicator:!1,locale:\"en\"", "replace": "nowIndicator:!1,locale:\"vi\"" },
+        { "file": "dist/electron/158.js", "find": "initialView:\"dayGridMonth\",locale:\"en\"", "replace": "initialView:\"dayGridMonth\",locale:\"vi\"" }
+      ]
+    },
+    "vivoControl_app.asar": {
+      "locales": [
+        { "type": "json", "from": "dist/assets/lang/vus.json", "to": "dist/assets/lang/vvi.json" }
+      ]
+    },
+    "VClaw_app.asar": {
+      "locales": [
+        { "type": "i18next-bundle", "file": "dist/assets/index-*.js", "anchor": "injectSupportedLanguageCodes(Object.keys(resources));", "from": "en_US", "to": "vi_VN" }
+      ],
+      "sourceReplace": [
+        { "file": "dist-electron/main/index.js", "find": "content:\"This scheduled task is still running in OpenClaw, but no chat transcript is available yet.\"", "replace": "content:\"Tác vụ đã lên lịch này vẫn đang chạy trong OpenClaw nhưng chưa có bản ghi trò chuyện.\"" },
+        { "file": "dist-electron/main/index.js", "find": "content:\"No chat transcript is available for this scheduled task yet.\"", "replace": "content:\"Chưa có bản ghi trò chuyện cho tác vụ đã lên lịch này.\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"This provider requires signing in via your browser.\"", "replace": "children:\"Nhà cung cấp này yêu cầu đăng nhập qua trình duyệt.\"" },
+        { "file": "dist/assets/index-*.js", "find": "=\"Đang tải lên nhật ký\",", "replace": "=\"Tải lên nhật ký\"," },
+        { "file": "dist/assets/index-*.js", "find": "children:\"Authentication Failed\"", "replace": "children:\"Xác thực không thành công\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"Try Again\"", "replace": "children:\"Thử lại\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"Complete OpenAI Login\"", "replace": "children:\"Hoàn tất đăng nhập OpenAI\"" },
+        { "file": "dist/assets/index-*.js", "find": "\"Open Authorization Page\"]", "replace": "\"Mở trang ủy quyền\"]" },
+        { "file": "dist/assets/index-*.js", "find": "placeholder:\"Paste callback URL or code\"", "replace": "placeholder:\"Dán URL gọi lại hoặc mã\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"Submit Code\"", "replace": "children:\"Gửi mã\"" },
+        { "file": "dist/assets/index-*.js", "find": "onClick:me,children:\"Cancel\"", "replace": "onClick:me,children:\"Hủy\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"Approve Login\"", "replace": "children:\"Phê duyệt đăng nhập\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"1. Copy the authorization code below.\"", "replace": "children:\"1. Sao chép mã ủy quyền bên dưới.\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"2. Open the login page in your browser.\"", "replace": "children:\"2. Mở trang đăng nhập trong trình duyệt.\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"3. Paste the code to approve access.\"", "replace": "children:\"3. Dán mã để phê duyệt quyền truy cập.\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"Waiting for approval in browser...\"", "replace": "children:\"Đang chờ phê duyệt trong trình duyệt...\"" },
+        { "file": "dist/assets/index-*.js", "find": "children:\"Requesting secure login code...\"", "replace": "children:\"Đang yêu cầu mã đăng nhập an toàn...\"" },
+        { "file": "dist/assets/index-*.js", "find": "message:`OpenClaw package not found at: ${", "replace": "message:`Không tìm thấy gói OpenClaw tại: ${" },
+        { "file": "dist/assets/index-*.js", "find": "message:\"OpenClaw package found but dist is missing\"", "replace": "message:\"Đã tìm thấy gói OpenClaw nhưng thiếu thư mục dist\"" },
+        { "file": "dist/assets/index-*.js", "find": "message:`OpenClaw package ready${", "replace": "message:`Gói OpenClaw đã sẵn sàng${" },
+        { "file": "dist/assets/index-*.js", "find": "message:`Check failed: ${", "replace": "message:`Kiểm tra không thành công: ${" },
+        { "file": "dist/assets/index-*.js", "find": "message:`Running on port ${", "replace": "message:`Đang chạy trên cổng ${" },
+        { "file": "dist/assets/index-*.js", "find": "message:\"Gateway startup timed out\"", "replace": "message:\"Khởi động cổng kết nối quá thời gian chờ\"" },
+        { "file": "dist/assets/index-*.js", "find": "placeholder:\"Not required\"", "replace": "placeholder:\"Không bắt buộc\"" },
+        { "file": "dist/assets/index-*.js", "find": "label:\"Thinking\"", "replace": "label:\"Đang suy nghĩ\"" },
+        { "file": "dist/assets/index-*.js", "find": "{title:\"Query\",dataIndex:\"query\"", "replace": "{title:\"Truy vấn\",dataIndex:\"query\"" },
+        { "file": "dist/assets/index-*.js", "find": "\"Tổng cộng <0>{{0}}</0> kỹ năng, đã bật <1>{{1}}</1>\"", "replace": "\"Tổng cộng <0>{{0}}</0> kỹ năng, đã bật <1>{{1}}</1>\"" }
+      ]
+    }
+  }
+}
