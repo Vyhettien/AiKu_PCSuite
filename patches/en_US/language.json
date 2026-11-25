@@ -1,0 +1,7 @@
+{
+  "name": "English",
+  "locale": "en_US",
+  "about": "Master translation, made by hand (Chinese -> English). All other languages are generated from it with tools/lang.js.",
+  "configIni": { "LanguageID": "1033", "LanguageTag": "en_US" },
+  "vivoScreen": "en-US"
+}
