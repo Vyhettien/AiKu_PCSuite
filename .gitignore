@@ -1,0 +1,15 @@
+# vivo program files - never commit (proprietary, hundreds of MB)
+backup_original_*/
+build/
+*.asar
+*.exe
+
+# run logs
+translate_log.txt
+debug.log
+
+# editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
